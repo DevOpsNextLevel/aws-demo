@@ -35,22 +35,28 @@ This demo showcases how to monitor AWS account activities using CloudTrail, proc
    - Enable versioning and default encryption (KMS).
    - Use this bucket for storing CloudTrail logs.
 
-2. **Set Up CloudTrail**
+2. **Set Up IAM Role**
+   - Creat an IAM Role that Cloudtrail needs to act on the cloudwatch log group:
+     - For this demo we will use AWS managed policies:
+     - AmazonS3FullAccess, AWS CloudTrail_FullAccess, AWSKeyManagementServicePowerUser, CloudWatchFullAccess.
+     - A custom managed policy for cloudtrail PutLogEven and CreateLogStream
+
+3. **Set Up CloudTrail**
    - Enable CloudTrail and configure:
      - S3 bucket for log storage.
      - SNS topic for event notifications.
 
-3. **Create an SNS Topic**
+4. **Create an SNS Topic**
    - Name: `cloudtrail-alerts-demo`.
    - Add an email or phone number as a subscriber.
 
-4. **Deploy the Lambda Function**
+5. **Deploy the Lambda Function**
    - Add the code in `lambda/handler.py`.
    - Set environment variables:
      - `SNS_TOPIC_ARN`: ARN of the SNS topic.
    - Attach the necessary IAM role.
 
-5. **Test the Setup**
+6. **Test the Setup**
    - Use the test event in `scripts/test-events.json`.
    - Simulate an unauthorized action:
      ```bash
