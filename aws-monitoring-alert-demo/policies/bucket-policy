@@ -8,10 +8,10 @@
                 "Service": "cloudtrail.amazonaws.com"
             },
             "Action": "s3:GetBucketAcl",
-            "Resource": "arn:aws:s3:::cloudtrail-logs-demo-108188564905",
+            "Resource": "arn:aws:s3:::cloudtrail-logs-demo-<acct_id>",
             "Condition": {
                 "StringEquals": {
-                    "AWS:SourceArn": "arn:aws:cloudtrail:us-east-1:108188564905:trail/demo-cloudtrail"
+                    "AWS:SourceArn": "arn:aws:cloudtrail:Rgion:<acct_id>:trail/demo-cloudtrail"
                 }
             }
         },
@@ -22,10 +22,10 @@
                 "Service": "cloudtrail.amazonaws.com"
             },
             "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::cloudtrail-logs-demo-108188564905/AWSLogs/108188564905/*",
+            "Resource": "arn:aws:s3:::cloudtrail-logs-demo-<acct_id>/AWSLogs/<acct_id>/*",
             "Condition": {
                 "StringEquals": {
-                    "AWS:SourceArn": "arn:aws:cloudtrail:us-east-1:108188564905:trail/demo-cloudtrail",
+                    "AWS:SourceArn": "arn:aws:cloudtrail:Rgion:<acct_id>:trail/demo-cloudtrail",
                     "s3:x-amz-acl": "bucket-owner-full-control"
                 }
             }

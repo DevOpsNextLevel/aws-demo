@@ -5,7 +5,7 @@
 			"Sid": "AllowRootAccess",
 			"Effect": "Allow",
 			"Principal": {
-				"AWS": "arn:aws:iam::108188564905:root"
+				"AWS": "arn:aws:iam::<acct_id>:root"
 			},
 			"Action": "kms:*",
 			"Resource": "*"
@@ -26,10 +26,10 @@
 			"Resource": "*",
 			"Condition": {
 				"StringEquals": {
-					"aws:SourceArn": "arn:aws:cloudtrail:us-east-1:108188564905:trail/demo-cloudtrail"
+					"aws:SourceArn": "arn:aws:cloudtrail:Region:<acct_id>:trail/demo-cloudtrail"
 				},
 				"StringLike": {
-					"kms:EncryptionContext:aws:cloudtrail:arn": "arn:aws:cloudtrail:*:108188564905:trail/*"
+					"kms:EncryptionContext:aws:cloudtrail:arn": "arn:aws:cloudtrail:*:<acct_id>:trail/*"
 				}
 			}
 		},
@@ -38,9 +38,9 @@
 			"Effect": "Allow",
 			"Principal": {
 				"AWS": [
-					"arn:aws:iam::108188564905:user/del-admin",
-					"arn:aws:iam::108188564905:user/del-admin1",
-					"arn:aws:iam::108188564905:role/Alozeus-role"
+					"arn:aws:iam::<acct_id>:user/del-admin",
+					"arn:aws:iam::<acct_id>:user/del-admin1",
+					"arn:aws:iam::<acct_id>:role/Alozeus-role"
 				]
 			},
 			"Action": [
