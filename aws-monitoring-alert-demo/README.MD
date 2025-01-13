@@ -55,7 +55,7 @@ This demo showcases how to monitor AWS account activities using CloudTrail, proc
 
 ## **Architecture Overview**
 
-![Architecture Diagram](link-to-diagram-if-any)
+![Architecture Diagram](https://drive.google.com/file/d/1BpqO_ujIUa90nTsMYK5JItfcTHebI_si/view?usp=sharing)
 
 1. **CloudTrail** logs AWS API activity and sends logs to:
    - **S3** for long-term storage.
