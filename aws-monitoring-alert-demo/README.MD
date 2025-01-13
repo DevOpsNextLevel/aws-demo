@@ -122,6 +122,115 @@ This demo showcases how to monitor AWS account activities using CloudTrail, proc
      ```
 
 ---
+# Deploying the AWS CloudFormation Template
+
+This guide provides step-by-step instructions for deploying the CloudFormation Template (CFT) to set up resources for the AWS CloudTrail Real-Time Monitoring and Alerting Demo.
+
+## Prerequisites
+
+Before deploying the CFT, ensure you have the following:
+- **AWS Account**: Access to a valid AWS account.
+- **IAM Permissions**: Ensure you have permissions to create:
+  - S3 buckets and policies
+  - CloudTrail trails
+  - IAM roles and policies
+  - Lambda functions
+  - CloudWatch log groups
+  - SNS topics and subscriptions
+  - KMS keys
+- **AWS CLI/Console**: Use either the AWS Management Console or the AWS CLI to deploy the stack.
+- **Template File**: The CloudFormation template file (`cloudtrail-demo.yml`).
+- **Parameters**:
+  - **AccountId**: Your AWS account ID.
+  - **Region**: Your preferred AWS region (e.g., `us-east-1`).
+  - **EmailSubscription**: An email address to receive SNS notifications.
+
+---
+
+## Deployment Steps
+
+### 1. Save the CloudFormation Template
+Save the provided YAML file as `cloudtrail-demo.yml`.
+
+---
+
+### 2. Deploy the Template Using the AWS Console
+
+1. **Navigate to the AWS CloudFormation Console**:
+   - [AWS CloudFormation Console](https://console.aws.amazon.com/cloudformation/)
+
+2. **Create a New Stack**:
+   - Choose **Stacks** > **Create Stack** > **With new resources (standard)**.
+
+3. **Upload the Template File**:
+   - Select **Upload a template file**.
+   - Choose the `cloudtrail-demo.yml` file from your system.
+
+4. **Specify Stack Parameters**:
+   - **AccountId**: Enter your AWS Account ID.
+   - **Region**: Specify your desired AWS Region.
+   - **EmailSubscription**: Enter your email address to receive SNS alerts.
+
+5. **Proceed with the Configuration**:
+   - Click **Next**, optionally configure stack options, and proceed to the next step.
+
+6. **Review and Create the Stack**:
+   - Review the stack settings and click **Create Stack** to begin the deployment.
+
+---
+
+### 3. Confirm the SNS Subscription
+Once the stack is deployed:
+- Check your email inbox for a subscription confirmation email from AWS SNS.
+- Click the **Confirm subscription** link to enable notifications.
+
+---
+
+### 4. Verify Deployment
+
+After deploying the stack, validate that resources are created and functioning as expected:
+1. **CloudTrail Logs**:
+   - Verify that the S3 bucket contains CloudTrail logs.
+   - Check the CloudWatch log group (`aws-cloudtrail-logs-<AccountId>-demo`) for events.
+2. **SNS Notifications**:
+   - Confirm that you receive email alerts for unauthorized actions.
+3. **Lambda Function**:
+   - Check the AWS Lambda console to confirm the function `process-cloudtrail-logs` was deployed successfully.
+
+---
+
+## Cleanup
+
+To avoid incurring charges, delete the stack after completing your work:
+1. Navigate to the **CloudFormation Console**.
+2. Select the deployed stack and click **Delete**.
+3. Confirm the deletion.
+
+---
+
+## Troubleshooting
+
+1. **Email Not Received**:
+   - Check your spam/junk folder.
+   - Verify the email address you provided in the `EmailSubscription` parameter.
+
+2. **Stack Deployment Errors**:
+   - Ensure you have the necessary IAM permissions to create all required resources.
+   - Review the **Events** tab in the CloudFormation Console for error messages.
+
+3. **SNS Notifications Not Triggered**:
+   - Confirm CloudTrail's integration with CloudWatch and SNS.
+   - Check the CloudWatch log group for Lambda function execution errors.
+
+---
+
+## Resources
+
+- [AWS CloudFormation Documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html)
+- [AWS SNS Documentation](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)
+- [AWS Lambda Documentation](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
+
+---
 
 ## **Files in the Directory**
 
