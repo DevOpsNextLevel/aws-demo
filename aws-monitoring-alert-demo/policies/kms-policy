@@ -38,9 +38,8 @@
 			"Effect": "Allow",
 			"Principal": {
 				"AWS": [
-					"arn:aws:iam::<acct_id>:user/del-admin",
-					"arn:aws:iam::<acct_id>:user/del-admin1",
-					"arn:aws:iam::<acct_id>:role/Alozeus-role"
+					"arn:aws:iam::<acct_id>:user/<user_name>",
+					"arn:aws:iam::<acct_id>:user/<role_name>"
 				]
 			},
 			"Action": [

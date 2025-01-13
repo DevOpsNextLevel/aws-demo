@@ -11,7 +11,7 @@
             "Resource": "arn:aws:s3:::cloudtrail-logs-demo-<acct_id>",
             "Condition": {
                 "StringEquals": {
-                    "AWS:SourceArn": "arn:aws:cloudtrail:Rgion:<acct_id>:trail/demo-cloudtrail"
+                    "AWS:SourceArn": "arn:aws:cloudtrail:Rgion:<acct_id>:trail/<cloudtrail_name>"
                 }
             }
         },
@@ -25,7 +25,7 @@
             "Resource": "arn:aws:s3:::cloudtrail-logs-demo-<acct_id>/AWSLogs/<acct_id>/*",
             "Condition": {
                 "StringEquals": {
-                    "AWS:SourceArn": "arn:aws:cloudtrail:Rgion:<acct_id>:trail/demo-cloudtrail",
+                    "AWS:SourceArn": "arn:aws:cloudtrail:Rgion:<acct_id>:trail/<cloudtrail_name>",
                     "s3:x-amz-acl": "bucket-owner-full-control"
                 }
             }
