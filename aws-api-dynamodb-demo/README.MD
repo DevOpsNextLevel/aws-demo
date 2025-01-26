@@ -174,7 +174,10 @@ Run the script:
 ```bash
 bash scripts/deploy_lambda_functions.sh
 ```
-
+Ensure the lambda role has sufficient permissions to interact with the dynamodb table:
+-   AWSLambdaDynamodbExecutionRole
+-   AmazonDynamoDBFullAccess
+These permissions are overly permissive, consider least privileges in Enterprise environment
 ---
 
 ### **4. Set Up API Gateway**
