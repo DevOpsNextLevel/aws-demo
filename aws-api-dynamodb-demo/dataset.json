@@ -1,0 +1,220 @@
+{
+    "EmployeeTable": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {
+                        "S": "E001"
+                    },
+                    "name": {
+                        "S": "John Doe"
+                    },
+                    "department": {
+                        "S": "Engineering"
+                    },
+                    "role": {
+                        "S": "Software Engineer"
+                    },
+                    "salary": {
+                        "N": "90000"
+                    },
+                    "status": {
+                        "S": "Active"
+                    },
+                    "join_date": {
+                        "S": "2019-04-01"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {
+                        "S": "E002"
+                    },
+                    "name": {
+                        "S": "Jane Smith"
+                    },
+                    "department": {
+                        "S": "Marketing"
+                    },
+                    "role": {
+                        "S": "Marketing Manager"
+                    },
+                    "salary": {
+                        "N": "80000"
+                    },
+                    "status": {
+                        "S": "Active"
+                    },
+                    "join_date": {
+                        "S": "2018-06-15"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {
+                        "S": "E003"
+                    },
+                    "name": {
+                        "S": "Carlos Gomez"
+                    },
+                    "department": {
+                        "S": "Finance"
+                    },
+                    "role": {
+                        "S": "Financial Analyst"
+                    },
+                    "salary": {
+                        "N": "85000"
+                    },
+                    "status": {
+                        "S": "On Leave"
+                    },
+                    "join_date": {
+                        "S": "2020-01-12"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {
+                        "S": "E004"
+                    },
+                    "name": {
+                        "S": "Sara Lee"
+                    },
+                    "department": {
+                        "S": "Engineering"
+                    },
+                    "role": {
+                        "S": "DevOps Engineer"
+                    },
+                    "salary": {
+                        "N": "95000"
+                    },
+                    "status": {
+                        "S": "Active"
+                    },
+                    "join_date": {
+                        "S": "2021-09-01"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {
+                        "S": "E005"
+                    },
+                    "name": {
+                        "S": "Tom Wilson"
+                    },
+                    "department": {
+                        "S": "Human Resources"
+                    },
+                    "role": {
+                        "S": "HR Manager"
+                    },
+                    "salary": {
+                        "N": "70000"
+                    },
+                    "status": {
+                        "S": "Active"
+                    },
+                    "join_date": {
+                        "S": "2017-03-25"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {
+                        "S": "E006"
+                    },
+                    "name": {
+                        "S": "Emily Davis"
+                    },
+                    "department": {
+                        "S": "Engineering"
+                    },
+                    "role": {
+                        "S": "Software Engineer"
+                    },
+                    "salary": {
+                        "N": "92000"
+                    },
+                    "status": {
+                        "S": "Inactive"
+                    },
+                    "join_date": {
+                        "S": "2016-10-20"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {
+                        "S": "E007"
+                    },
+                    "name": {
+                        "S": "Michael Brown"
+                    },
+                    "department": {
+                        "S": "Finance"
+                    },
+                    "role": {
+                        "S": "Accountant"
+                    },
+                    "salary": {
+                        "N": "78000"
+                    },
+                    "status": {
+                        "S": "Active"
+                    },
+                    "join_date": {
+                        "S": "2022-02-10"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "employee_id": {
+                        "S": "E008"
+                    },
+                    "name": {
+                        "S": "Anna Lee"
+                    },
+                    "department": {
+                        "S": "Engineering"
+                    },
+                    "role": {
+                        "S": "DevOps Engineer"
+                    },
+                    "salary": {
+                        "N": "95000"
+                    },
+                    "status": {
+                        "S": "On Leave"
+                    },
+                    "join_date": {
+                        "S": "2020-08-22"
+                    }
+                }
+            }
+        }
+    ]
+}
