@@ -1,0 +1,103 @@
+# 🌐 S3 Static Website Hosting Demo
+
+Welcome to a quick and practical AWS demo from **DevOpsEasy Learning Training Institute**!
+
+This guide will show you how to host a static website using **Amazon S3**, without using EC2 or a web server. Just upload an HTML file, enable website hosting, and your site goes live — cloud-native and serverless!
+
+---
+
+## 🎯 Objective
+
+- Host a `index.html` file as a static website using Amazon S3
+- Access the website via a public S3 endpoint
+- Understand how S3 static hosting works in real-world scenarios
+
+---
+
+## 🧰 Prerequisites
+
+- AWS Account
+- IAM user with S3 permissions
+- A simple `index.html` file (included in this repo)
+
+---
+
+## 🚀 Steps to Deploy Your Static Website on S3
+
+### 🔹 1. Create an S3 Bucket
+
+1. Go to [S3 Console](https://console.aws.amazon.com/s3/)
+2. Click **Create bucket**
+3. Name your bucket (e.g., `my-static-site-devops2025`)
+4. Uncheck **Block all public access**
+5. Acknowledge the warning ✅
+6. Click **Create bucket**
+
+---
+
+### 🔹 2. Upload `index.html`
+
+1. Click on the bucket you just created
+2. Click **Upload**
+3. Upload your `index.html` file
+4. Click **Upload**
+
+---
+
+### 🔹 3. Enable Static Website Hosting
+
+1. Go to the **Properties** tab of the bucket
+2. Scroll to **Static website hosting**
+3. Click **Edit**
+4. Choose **Enable**
+5. Set the **Index document** as `index.html`
+6. Save changes
+
+You’ll get a **Website endpoint URL** — copy it!
+
+---
+
+### 🔹 4. Make Objects Public (Set Bucket Policy)
+
+Go to the **Permissions** tab → **Bucket Policy** → Add this policy:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Sid": "PublicReadGetObject",
+    "Effect": "Allow",
+    "Principal": "*",
+    "Action": "s3:GetObject",
+    "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/*"
+  }]
+}
+
+✅ Replace YOUR_BUCKET_NAME with your actual bucket name.
+
+🔹 5. View Your Website!
+Visit the website endpoint URL provided by S3 — it should display your HTML page!
+
+🖼️ Example Screenshot
+
+💡 Real-World Use Cases
+Landing pages
+
+Documentation sites
+
+Serverless web apps
+
+Portfolio websites
+
+📁 Folder Structure
+cpp
+Copy
+Edit
+s3-static-website-demo/
+├── index.html
+├── README.md
+└── screenshots/
+    └── s3-demo-preview.png
+🙌 Credits
+This demo is part of the AWS Fundamentals Series by
+DevOpsEasy Learning Training Institute
