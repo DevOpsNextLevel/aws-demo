@@ -1,0 +1,17 @@
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# AWS SAM build artifacts
+.aws-sam/
+
+# VS Code config
+.vscode/
+
+# macOS files
+.DS_Store
+
+# Secrets (optional)
+.env
