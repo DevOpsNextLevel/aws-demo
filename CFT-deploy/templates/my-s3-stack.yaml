@@ -1,0 +1,49 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation Template to create S3 Bucket with optional features
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: Name of the S3 Bucket
+
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      # Uncomment to enable Versioning
+      # VersioningConfiguration:
+      #   Status: Enabled
+
+      # Uncomment to enable Bucket Encryption
+      # BucketEncryption:
+      #   ServerSideEncryptionConfiguration:
+      #     - ServerSideEncryptionByDefault:
+      #         SSEAlgorithm: AES256
+
+      # Uncomment to add Lifecycle Rules
+      # LifecycleConfiguration:
+      #   Rules:
+      #     - Id: ExpireOldObjects
+      #       Status: Enabled
+      #       ExpirationInDays: 30
+      #       Prefix: ""
+      #       NoncurrentVersionExpirationInDays: 30
+
+  # Uncomment this block to create a Bucket Policy
+  # MyS3BucketPolicy:
+  #   Type: AWS::S3::BucketPolicy
+  #   Properties:
+  #     Bucket: !Ref MyS3Bucket
+  #     PolicyDocument:
+  #       Version: "2012-10-17"
+  #       Statement:
+  #         - Effect: Allow
+  #           Principal: "*"
+  #           Action: "s3:GetObject"
+  #           Resource: !Sub "${MyS3Bucket.Arn}/*"
+
+Outputs:
+  BucketName:
+    Description: The name of the S3 bucket
+    Value: !Ref MyS3Bucket
